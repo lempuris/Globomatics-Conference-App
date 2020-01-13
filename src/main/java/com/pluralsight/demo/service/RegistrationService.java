@@ -10,6 +10,7 @@ import javax.persistence.EntityNotFoundException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.integration.annotation.ServiceActivator;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -49,6 +50,7 @@ public class RegistrationService {
         this.ticketTypeRepository = ticketTypeRepository;
     }
 
+    @ServiceActivator(inputChannel = "registrationRequest")
     public void register(AttendeeRegistration registration) {
         LOG.debug("Registration received for: {}", registration.getEmail());
 
