@@ -1,5 +1,7 @@
 package com.pluralsight.demo.web;
 
+import java.time.OffsetDateTime;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -44,7 +46,9 @@ public class RegistrationController {
 			return "index";
 		}
 
-	 Message<AttendeeRegistration> message = MessageBuilder.withPayload(registration).build();
+	 Message<AttendeeRegistration> message = MessageBuilder.withPayload(registration)
+			 .setHeader("dateTime", OffsetDateTime.now())
+			 .build();
 		registrationRequestChannel.send(message);
 
 		// registrationService.register(registration);
