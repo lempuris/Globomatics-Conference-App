@@ -1,12 +1,8 @@
-# Spring Integration: Getting Started - 01 - Start
-
-This is a demo project for the Pluralsight course "Spring Integration: Getting Started" by Jesper de Jong.
+# Spring Integration:
+This is a demo project on Spring Integration
 
 Demo 1: Starting point.
 
-## Starting point
-
-This is the starting point for the demo application that we'll be working with throughout the course.
 
 ### Building
 
